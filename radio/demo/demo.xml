@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!--Añadimos 3 trabajadores-->
+          <record id="employee_Antonio" model="hr.employee">
+            <field name="name">Antonio Company</field>
+            <field name="department_id" ref="hr.dep_administration"/>
+            <field name="work_location">Viladecans</field>
+            <field name="work_email">antonicr1986@hotmail.com</field>
+          </record>
+
+           <record id="employee_Silvia" model="hr.employee">
+            <field name="name">Silvia Company</field>
+            <field name="department_id" ref="hr.dep_sales"/>
+            <field name="work_location">Gavà</field>
+            <field name="work_email">silviacr1981@hotmail.com</field>
+          </record>
+
+           <record id="employee_Lucia" model="hr.employee">
+            <field name="name">Lucia Rodriguez</field>
+            <field name="department_id" ref="hr.dep_sales"/>
+            <field name="work_location">Segur de calafell</field>
+            <field name="work_email">luciarm1976@hotmail.com</field>
+          </record>
+<!--Añadimos 3 secciones-->
+          <record id="seccion1" model="radio.section">
+            <field name="name">Seccion demo 1</field>
+            <field name="description">Aqui iria la descripcion completa de la seccion 1</field>
+            <field name="hours">10</field>
+          </record>
+
+          <record id="seccion2" model="radio.section">
+            <field name="name">Seccion demo 2</field>
+            <field name="description">Aqui iria la descripcion completa de la seccion 2</field>
+            <field name="hours">20</field>
+          </record>
+
+          <record id="seccion3" model="radio.section">
+            <field name="name">Seccion demo 3</field>
+            <field name="description">Aqui iria la descripcion completa de la seccion 3</field>
+            <field name="hours">20</field>
+          </record>
+<!-- Añadimos 3 programas-->
+          <record id="programa1" model="radio.program">
+            <field name="name">Programa demo 1</field>
+            <field name="duration">10</field>
+          </record>
+
+          <record id="programa2" model="radio.program">
+            <field name="name">Programa demo 2</field>
+            <field name="duration">20</field>
+          </record>
+
+          <record id="programa3" model="radio.program">
+            <field name="name">Programa demo 3</field>
+            <field name="duration">30</field>
+          </record>
+    </data>
+</odoo>

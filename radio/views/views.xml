@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- VISTA!!! explicit list view definition -->
+
+    <!-- VISTA TIPO LISTA -->
+    <record model="ir.ui.view" id="radio.section_list">
+      <field name="name">Section list</field>
+      <field name="model">radio.section</field>
+      <field name="arch" type="xml">
+        <tree >
+          <field name="name"/>
+          <field name="hours"/>
+        </tree>
+      </field>
+    </record>
+    <!-- VISTA TIPO FORM -->
+    <record model="ir.ui.view" id="radio.section_form">
+      <field name="name">Section form</field>
+      <field name="model">radio.section</field>
+      <field name="arch" type="xml">
+        <form string="Section">
+          <sheet>
+            <group>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="hours"/>
+            </group>
+            <group>
+                <field name="participants" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- VISTA TIPO LISTA -->
+    <record model="ir.ui.view" id="radio.program_list">
+      <field name="name">Program list</field>
+      <field name="model">radio.program</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="duration"/>
+          <field name="sections" string="Sections"/>
+        </tree>
+      </field>
+    </record>
+    <!-- VISTA TIPO FORM -->
+    <record model="ir.ui.view" id="radio.program_form">
+      <field name="name">Program form</field>
+      <field name="model">radio.program</field>
+      <field name="arch" type="xml">
+        <form string="Program">
+          <sheet>
+             <!--<button name="print_report" string="Imprimir" type="object" class="oe_highlight"/>-->
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only"/>
+              <h1>
+                <field name="name" />
+              </h1>
+            </div>
+            <group>
+                <field name="duration"/>
+                <field name="sections" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!--VISTA TIPO SEARCH-->
+    <record model="ir.ui.view" id="radio.program_search_view">
+      <field name="name">Section search</field>
+      <field name="model">radio.section</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="participants"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- ACCION PARA ABRIR LA VISTA!!!! actions opening views on models -->
+    <record model="ir.actions.act_window" id="radio.section_action_window">
+      <field name="name">Sections</field>
+      <field name="res_model">radio.section</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="radio.programs_action_window">
+      <field name="name">Programs</field>
+      <field name="res_model">radio.program</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--CREACION DEL MENÚ IZQUIERDA!!!! Top menu item -->
+    <menuitem name="Radio" id="radio.menu_root"/>
+
+    <!--CREACIÓN SUBMENÚS UN POCO A LA DERECHA menu categories -->
+    <menuitem name="Programs" id="radio.menu_1" parent="radio.menu_root"/>
+    <menuitem name="Sections" id="radio.menu_2" parent="radio.menu_root"/>
+
+    <!--CREACIÓN SUBMENÚS AL CLICKAR EN PROGRAMAS O SECTION actions -->
+    <menuitem name="Programs" id="radio.menu_program" parent="radio.menu_1"
+              action="radio.programs_action_window"/>
+    <menuitem name="Sections" id="radio.menu_section" parent="radio.menu_2"
+              action="radio.section_action_window"/>
+  </data>
+</odoo>
