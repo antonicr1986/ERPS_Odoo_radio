@@ -22,15 +22,15 @@ El módulo `radio` permite gestionar programas de radio y sus secciones, así co
 
 ## Vista general de secciones
 
-![Formulario de sección](Screenshots/radioSections1.jpg)
+![Formulario de sección](screenshots/radioSections1.jpg)
 
 
 ### Vista en diferentes idiomas (Español y Catalán)
 
-![Formulario en diferentes idiomas](Screenshots/radioEsCat2.jpg)
+![Formulario en diferentes idiomas](screenshots/radioEsCat2.jpg)
 
 
 ### Vista interior de sección
 
-![Interior de formulario de seccion](Screenshots/radio3.jpg)
+![Interior de formulario de seccion](screenshots/radio3.jpg)
 
